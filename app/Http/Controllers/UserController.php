@@ -49,7 +49,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return view('users.edit');
+        $user = User::find(1);
+        return view('users.edit', [
+            'user' => $user
+        ]);
     }
 
     /**
