@@ -32,9 +32,10 @@
                 </div>
                 <div class="form-group">
                     <label for="state">Estado</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option value="activo">Activo</option>
-                        <option value="inactivo">Inactivo</option>
+                    <select class="form-control" id="state" name="state">
+                        @foreach ($states as $stateKey => $stateVal)
+                            <option value="{{ $stateKey }}" {{ $user->state == $stateKey ? 'selected' : '' }}>{{ $stateVal }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Actualizar</button>

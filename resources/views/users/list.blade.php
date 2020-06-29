@@ -23,7 +23,7 @@
                             <th scope="row">{{ $user->id }}</th>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email}}</td>
-                            <td>Pendiente</td>
+                            <td>{{ $user->state == 1 ?  'Activo ' : 'Inactivo' }}</td>
                             <td><a href="{{ url('/users/'.$user->id).'/edit' }}">Editar</a></td>
                         </tr>
                     @endforeach
