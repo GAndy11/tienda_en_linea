@@ -6,6 +6,19 @@
             <h1>Editar Usuario</h1>
         </div>
         <div class="col-md-12">
+            @if($errors->any())
+                <div>
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>
+                                    {{$error}}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            @endif
             <form action="/users/{{ $user->id }}" method="POST">
                 @csrf
                 @method('put')
