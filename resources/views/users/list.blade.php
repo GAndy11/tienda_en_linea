@@ -24,7 +24,7 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email}}</td>
                             <td>Pendiente</td>
-                            <td><a href="{{ url('/users/'.$user->id) }}">Editar</a></td>
+                            <td><a href="{{ url('/users/'.$user->id).'/edit' }}">Editar</a></td>
                         </tr>
                     @endforeach
                 </tbody>
