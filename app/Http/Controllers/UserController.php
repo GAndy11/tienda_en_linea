@@ -60,9 +60,17 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($id); //Traer el usuario de BD
+
+        //Estados estaticos del usuario
+        $states = [
+            1 => "Activo",
+            0 => "Inactivo"
+        ];
+
         return view('users.edit', [
-            'user' => $user
+            'user' => $user,
+            'states' => $states
         ]);
     }
 
@@ -84,6 +92,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->name = $validData['name'];
         $user->email = $validData['email'];
+        $user->state = $request->get('state');
         $user->save();
 
         return redirect('/users');
