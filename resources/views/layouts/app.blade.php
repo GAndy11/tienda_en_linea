@@ -23,8 +23,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
-                    {{ config('app.name', 'Evertec') }}
+                <a class="navbar-brand app-name" href="{{ url('/home') }}">
+                    {{ config('app.name', 'MercaTodo') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -49,6 +49,17 @@
                                 </li>
                             @endif
                         @else
+                            <li>
+                                <div class="btn-group">
+                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Administración
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href=" {{ url('/users') }} ">Usuarios</a>
+                                        <a class="dropdown-item" href=" {{ url('/products') }} ">Productos</a>
+                                    </div>
+                                </div>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -66,16 +77,7 @@
                                     </form>
                                 </div>
                             </li>
-                            <li>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Administración
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href=" {{ url('/users') }} ">Usuarios</a>
-                                    </div>
-                                </div>
-                            </li>
+                            
                         @endguest
                     </ul>
                 </div>

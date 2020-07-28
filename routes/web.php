@@ -22,3 +22,6 @@ Route::get('/', function () {
 });
 
 Route::resource('/users', 'UserController')->middleware('verified');
+
+Route::resource('/products', 'ProductController');
+
