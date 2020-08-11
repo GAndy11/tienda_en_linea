@@ -10998,7 +10998,7 @@ a.text-dark:focus {
 /*Store Styles */
 
 .store-titu{
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.9);  
   font-size: 20px; 
   border-left: 2px solid #17B7E2;
   padding: 5px;  
@@ -11010,4 +11010,8 @@ a.text-dark:focus {
   background-color: #17B7E2;
   padding: 10px;
   transition: 0.3s; 
+}
+
+.showcase-store{
+  padding-top: 20px;
 }

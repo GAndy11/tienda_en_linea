@@ -18,6 +18,7 @@
                     <br>
                     <div class="row">
                         <div class="col-md-3">
+                            
                             <a class="landing-btns" href="{{ url('/store') }}">
                                 Tienda
                             </a>
