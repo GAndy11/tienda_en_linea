@@ -33,7 +33,7 @@
                         @foreach ($products as $product)
                             <tr>
                                 <th scope="row">{{ $product->id }}</th>
-                                <td>{{ $product->image }}</td>
+                                <td><img src="{{ asset('storage/'.$product->image) }}" alt=""></td>
                                 <td>{{ $product->name}}</td>
                                 <td>{{ $product->state == 1 ?  'Activo ' : 'Inactivo' }}</td>
                                 <td><a href="{{ url('/products/'.$product->id).'/edit' }}">Editar</a></td>

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Product;
+use Illuminate\Contracts\Cache\Store;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -45,8 +48,27 @@ class ProductController extends Controller
             'price' => 'required'
         ]);
 
-        return redirect('/products');
+        $product = new Product();
 
+        $product->name = $validData['name'];
+        $product->description = $validData['description'];
+        $product->price = $validData['price'];
+        
+        //Subir la imagen
+        $imagePath = $request->file('image');
+        if($imagePath)
+        {
+            $imagePathName = time() . $imagePath->getClientOriginalName();
+
+            Storage::disk('products')->put($imagePathName, File::get($imagePath));
+            $product->image = $imagePathName;
+        }
+
+        $product->save();
+
+        echo "<script>alert('Producto ingresado con Exito)</script>";
+
+        return redirect('/products');
     }
 
     /**

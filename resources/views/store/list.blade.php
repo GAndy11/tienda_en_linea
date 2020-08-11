@@ -18,32 +18,18 @@
             </span>
             <br>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 showcase-store">
                     @if(count($products) > 0)
-                        <table class="table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">Id</th>
-                                    <th scope="col">Imagen</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Precio</th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($products as $product)
-                                    <tr>
-                                        <th scope="row">{{ $product->id }}</th>
-                                        <td>{{ $product->image }}</td>
-                                        <td>{{ $product->name}}</td>
-                                        <td>{{ $product->state == 1 ?  'Activo ' : 'Inactivo' }}</td>
-                                        <td><a href="{{ url('/products/'.$product->id).'/edit' }}">Editar</a></td>
-                                        <td><a href="#">Eliminar</a> </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                        @foreach ($products as $product)
+                            <div class="card card-producto" style="width: 18rem;">
+                                <img class="card-img-top" src="{{asset('storage/products/'.$product->image)}}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?=$product->name;?></h5>
+                                    <p class="card-text">Precio: $<?=$product->price;?></p>
+                                    <a href="{{ url('/products/'.$product->id).'/edit' }}" class="btn btn-primary">Ver Producto</a>
+                                </div>
+                            </div>
+                        @endforeach
                     @else
                         <br>
                         <h5>No hay productos para mostrar.</h5>

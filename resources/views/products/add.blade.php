@@ -19,7 +19,7 @@
                     </div>
                 </div>
             @endif
-            <form action="/products" method="POST">
+            <form action="/products" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="name">Nombre Producto</label>
