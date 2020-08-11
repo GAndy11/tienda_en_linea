@@ -10962,3 +10962,56 @@ a.text-dark:focus {
   transition: 0.3s;
   
 }
+
+/*Home Styles */
+.landing-title{
+  padding-top: 100px;
+
+}
+
+.titu-landing{
+  color: rgba(0, 0, 0, 0.9);
+
+  border-left: 2px solid #17B7E2;
+  padding: 5px;
+}
+
+.image-landing{
+  width: 600px;
+}
+
+.landing-btns{
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 20px; 
+  border-left: 2px solid #17B7E2;
+  padding: 5px;  
+}
+
+.landing-btns:hover{
+  color: white;
+  text-decoration: none;
+  background-color: #17B7E2;
+  padding: 10px;
+  transition: 0.3s; 
+}
+
+/*Store Styles */
+
+.store-titu{
+  color: rgba(0, 0, 0, 0.9);  
+  font-size: 20px; 
+  border-left: 2px solid #17B7E2;
+  padding: 5px;  
+}
+
+.store-titu:hover{
+  color: white;
+  text-decoration: none;
+  background-color: #17B7E2;
+  padding: 10px;
+  transition: 0.3s; 
+}
+
+.showcase-store{
+  padding-top: 20px;
+}
