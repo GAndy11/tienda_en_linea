@@ -14,7 +14,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        //All not admin users 
+        $users = User::with('roles')
+            ->doesntHave('roles')
+            ->get(); 
+
         return view('users.list', [
             'users' => $users
         ]);
