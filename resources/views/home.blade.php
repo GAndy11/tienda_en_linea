@@ -18,17 +18,17 @@
                     <br>
                     <div class="row">
                         <div class="col-md-3">
-                            <a class="landing-btns" href="{{ url('/products/create') }}">
+                            <a class="landing-btns" href="{{ url('/store') }}">
                                 Tienda
                             </a>
                         </div>
                         <div class="col-md-3">
-                            <a class="landing-btns" href="{{ url('/products/create') }}">
+                            <a class="landing-btns" href="{{ url('/profile') }}">
                                 Mi Cuenta
                             </a>
                         </div>
                         <div class="col-md-3">
-                            <a class="landing-btns" href="{{ url('/products/create') }}">
+                            <a class="landing-btns" href="{{ url('/promo') }}">
                                 Promociones
                             </a>
                         </div>
