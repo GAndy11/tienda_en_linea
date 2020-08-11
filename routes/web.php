@@ -21,7 +21,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/users', 'UserController')->middleware('verified');
+Route::group(['middleware' => ['verified', 'permission:admin']], function () {
+    Route::resource('/users', 'UserController');
+    Route::resource('/products', 'ProductController');
+});
 
-Route::resource('/products', 'ProductController');
+
+
+
 
