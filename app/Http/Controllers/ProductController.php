@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Product;
 use Illuminate\Contracts\Cache\Store;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
 {
@@ -66,7 +68,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        echo "<script>alert('Producto ingresado con Exito)</script>";
+        Log::info('El usuario con identificador: ' . Auth::id() . ' creó el producto con id: ' . $product->id);
 
         return redirect('/products');
     }
