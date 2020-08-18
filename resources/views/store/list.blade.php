@@ -17,25 +17,23 @@
                 Productos
             </span>
             <br>
-            <div class="row">
-                <div class="col-md-12 showcase-store">
-                    @if(count($products) > 0)
-                        @foreach ($products as $product)
-                            <div class="card card-producto" style="width: 18rem;">
-                                <img class="card-img-top" src="{{asset('storage/products/'.$product->image)}}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"><?=$product->name;?></h5>
-                                    <p class="card-text">Precio: $<?=$product->price;?></p>
-                                    <a href="{{ url('/products/'.$product->id).'/edit' }}" class="btn btn-primary">Ver Producto</a>
-                                </div>
+            <div class="row showcase-store">
+                @if(count($products) > 0)
+                    @foreach ($products as $product)
+                        <div class="card card-producto" style="width: 14rem;">
+                            <img class="card-img-top" src="{{asset('storage/products/'.$product->image)}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><?=$product->name;?></h5>
+                                <p class="card-text">Precio: $<?=$product->price;?></p>
+                                <a class="btn-view-product" href="{{ url('/products/'.$product->id).'/edit' }}" class="btn btn-primary">Ver Producto</a>
                             </div>
-                        @endforeach
-                    @else
-                        <br>
-                        <h5>No hay productos para mostrar.</h5>
-                    @endif
-                    
-                </div>
+                        </div>
+                    @endforeach
+                @else
+                    <br>
+                    <h5>No hay productos para mostrar.</h5>
+                @endif
+                
             </div>
         </div>
     </div>

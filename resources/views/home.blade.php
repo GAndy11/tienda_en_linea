@@ -4,6 +4,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
+            <a href='https://www.freepik.es/vectores/negocios'>
+                <img class="image-landing" src="images/landing.jpg" alt="">
+                Vector de Negocios creado por stories - www.freepik.es
+            </a>            
+        </div>
+        <div class="col-md-6">
             <div class="row justify-content-center">
                 <div class="col-md-12 landing-title">
                     <blockquote class="blockquote">
@@ -36,14 +42,7 @@
                     </div>
                     
                 </div>
-                
             </div>
-        </div>
-        <div class="col-md-6">
-            <a href='https://www.freepik.es/vectores/negocios'>
-                <img class="image-landing" src="images/landing.jpg" alt="">
-                Vector de Negocios creado por stories - www.freepik.es
-            </a>            
         </div>
     </div>
 </div>

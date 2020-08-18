@@ -10977,7 +10977,7 @@ a.text-dark:focus {
 }
 
 .image-landing{
-  width: 600px;
+  width: 100%;
 }
 
 .landing-btns{
@@ -11014,4 +11014,24 @@ a.text-dark:focus {
 
 .showcase-store{
   padding-top: 20px;
+  margin: 10px;
+}
+
+.card-producto{
+  margin: 10px;
+}
+
+.btn-view-product{
+  color: rgba(0, 0, 0, 0.9);  
+  font-size: 20px; 
+  border-left: 2px solid #17B7E2;
+  padding: 5px;
+}
+
+.btn-view-product:hover{
+  color: white;
+  text-decoration: none;
+  background-color: #17B7E2;
+  padding: 10px;
+  transition: 0.3s; 
 }
