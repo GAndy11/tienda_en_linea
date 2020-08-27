@@ -7,11 +7,7 @@
     </div>
     <br>
     <div class="row">
-        <div class="col-md-3">
-            <span class="store-titu">
-                Filtros
-            </span>
-        </div>
+        
         <div class="col-md-9">
             <span class="store-titu">
                 Productos
@@ -25,7 +21,7 @@
                             <div class="card-body">
                                 <h5 class="card-title"><?=$product->name;?></h5>
                                 <p class="card-text">Precio: $<?=$product->price;?></p>
-                                <a class="btn-view-product" href="{{ url('/products/'.$product->id).'/edit' }}" class="btn btn-primary">Ver Producto</a>
+                                <a class="btn-view-product" href="{{ url('/store/'.$product->id) }}" class="btn btn-primary">Ver Producto</a>
                             </div>
                         </div>
                     @endforeach
@@ -35,6 +31,14 @@
                 @endif
                 
             </div>
+        </div>
+        <div class="col-md-3">
+            <span class="store-titu">
+                Filtros
+            </span>
+            <br>
+            <br>
+            <button class="btn btn-primary">Aplicar Filtros</button>
         </div>
     </div>
     <br>

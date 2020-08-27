@@ -1,4 +1,4 @@
-@extends('layouts.app')
+    @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -10,21 +10,24 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                         <th scope="col">Id</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Estado</th>
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
                         <tr>
+                            <td style="width: 20px"><a href="{{ url('/users/'.$user->id)}}"><img src="{{asset('storage/images/search_logo.png')}}" width="20" ></a></td>
+                            <td style="width: 20px"><a href="{{ url('/users/'.$user->id).'/edit' }}"><img src="{{asset('storage/images/edit_logo.png')}}" width="20" ></a></td>
                             <th scope="row">{{ $user->id }}</th>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email}}</td>
-                            <td>{{ $user->state == 1 ?  'Activo ' : 'Inactivo' }}</td>
-                            <td><a href="{{ url('/users/'.$user->id).'/edit' }}">Editar</a></td>
+                            <th scope="row">{{ $user->state == 1 ?  'Activo ' : 'Inactivo' }}</th>
+                            
                         </tr>
                     @endforeach
                 </tbody>
