@@ -53,7 +53,24 @@ class UserController extends Controller
      */
     public function show(int $id)
     {
-        //
+        $user = User::findOrFail($id); //Traer el usuario de BD
+
+        //Estados estaticos del usuario
+        $states = [
+            1 => "Activo",
+            0 => "Inactivo"
+        ];
+
+        foreach ($states as $key => $value) {
+            if($user->state == $key ){
+                $user->stateName = $value;   
+            }
+        }
+
+        return view('users.show', [
+            'user' => $user,
+            'states' => $states
+        ]);
     }
 
     /**
