@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <h1>Listado de Productos para Administración.</h1>
     </div>
@@ -33,7 +33,7 @@
                     <tbody>
                         @foreach ($products as $product)
                             <tr>
-                                <td style="width: 20px"><a href=""><img src="{{asset('storage/images/search_logo.png')}}" width="20" ></a></td>
+                                <td style="width: 20px"><a href="{{ url('/products/'.$product->id) }}"><img src="{{asset('storage/images/search_logo.png')}}" width="20" ></a></td>
                                 <td style="width: 20px"><a href="{{ url('/products/'.$product->id).'/edit' }}"><img src="{{asset('storage/images/edit_logo.png')}}" width="20" ></a></td>
                                 <th scope="row">{{ $product->id }}</th>
                                 <td>

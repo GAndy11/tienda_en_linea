@@ -14,7 +14,7 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::where('state', 1)->get();
         return view('store.list', [
             'products' => $products
         ]);
