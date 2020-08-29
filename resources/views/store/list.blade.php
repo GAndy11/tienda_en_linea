@@ -8,7 +8,7 @@
     <br>
     <div class="row">
         
-        <div class="col-md-9">
+        <div class="col-md-9 store-content">
             <span class="store-titu">
                 Productos
             </span>
@@ -16,7 +16,7 @@
             <div class="row showcase-store">
                 @if(count($products) > 0)
                     @foreach ($products as $product)
-                        <div class="card card-producto" style="width: 14rem;">
+                        <div class="card card-producto" style="width: 12rem;">
                             <img class="card-img-top" src="{{asset('storage/products/'.$product->image)}}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title"><?=$product->name;?></h5>

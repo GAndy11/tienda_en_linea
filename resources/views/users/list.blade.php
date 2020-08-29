@@ -1,7 +1,7 @@
     @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <h1>Listado de usuarios de la plataforma.</h1>
     </div>

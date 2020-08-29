@@ -73,7 +73,8 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f8fafc;
+  /*background-color: #f8fafc;*/
+  background: white;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -8326,7 +8327,7 @@ button.bg-dark:focus {
 }
 
 .shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
 .shadow {
@@ -10930,7 +10931,6 @@ a.text-dark:focus {
 }
 
 /*Start global users styles*/
-
 .app-name{
   font-size: 30px;
   border: 3px solid #17B7E2;
@@ -10944,13 +10944,25 @@ a.text-dark:focus {
   border: 3px solid #343a40;
   transition: 0.3s;
 }
+
+.boxed{
+  border-radius: 20px 40px;
+  padding: 30px 50px 50px 50px;
+  font-size: 21px;
+  font-weight: 600;
+  -webkit-box-shadow: 0px 0px 5px 10px rgba(245,245,245,1);
+  -moz-box-shadow: 0px 0px 5px 10px rgba(245,245,245,1);
+  box-shadow: 0px 0px 5px 10px rgba(245,245,245,1);
+}
+
 /*End global users styles */
 
 /*Start products styles */
 
 .new-product{
   color: rgba(0, 0, 0, 0.9);
-  font-size: 17px; 
+  font-size: 22px; 
+  
   border-left: 2px solid #17B7E2;
   padding: 5px;
 }
@@ -10979,6 +10991,10 @@ a.text-dark:focus {
 
 .image-landing{
   width: 100%;
+}
+
+.home-description{
+  font-size: 22px;
 }
 
 .landing-btns{
@@ -11051,26 +11067,36 @@ a.text-dark:focus {
   padding: 30px 20px 59px 20px;
   border: 0;
 }
-.card1 {
-  background: linear-gradient(to bottom right, #FDBD56, #FD56B6);
-  box-shadow: 3px 15px 30px rgba(253, 99, 169, 0.75);
+
+
+.box-detalle-description{
+  margin-left: 30px;
 }
 
-.card h3 {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 40px;
-  font-weight: 900;
-  letter-spacing: 0px;
+.landing-btns{
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 20px; 
+  border-left: 2px solid #17B7E2;
+  padding: 5px;  
 }
 
-.btn-update-user{
+.landing-btns:hover{
+  color: white;
+  text-decoration: none;
+  background-color: #17B7E2;
+  padding: 10px;
+  transition: 0.3s; 
+}
+
+.add_cart{
   color: rgba(0, 0, 0, 0.9);  
   font-size: 20px; 
+  font-weight: 100;
   border-left: 2px solid #17B7E2;
   padding: 5px;
 }
 
-.btn-update-user:hover{
+.add_cart:hover{
   color: white;
   text-decoration: none;
   background-color: #17B7E2;
