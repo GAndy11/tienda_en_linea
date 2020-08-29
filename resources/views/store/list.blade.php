@@ -25,12 +25,17 @@
                             </div>
                         </div>
                     @endforeach
+                    
+                    
                 @else
                     <br>
                     <h5>No hay productos para mostrar.</h5>
                 @endif
-                
+            
             </div>
+            
+            <br>
+            {{ $products->links() }}
         </div>
         <div class="col-md-3">
             <span class="store-titu">
