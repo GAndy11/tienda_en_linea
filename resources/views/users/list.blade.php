@@ -5,8 +5,10 @@
     <div class="row justify-content-center">
         <h1>Listado de usuarios de la plataforma.</h1>
     </div>
+    {{ $users->links() }}
     <div class="row">
         <div class="col-md-12">
+            
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -33,6 +35,7 @@
                 </tbody>
             </table>
         </div>
+        
     </div>
 </div>
 @endsection

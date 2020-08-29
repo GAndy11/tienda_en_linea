@@ -48,6 +48,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $products->links() }}
             @else
                 <h3>No hay productos para mostrar.</h3>
             @endif
