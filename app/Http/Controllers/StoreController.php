@@ -14,9 +14,25 @@ class StoreController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::where('state', 1)->get();
         return view('store.list', [
             'products' => $products
+        ]);
+    }
+
+    /**
+     * Display the detail of one product.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(int $id)
+    {
+        
+        $product = Product::find($id);
+
+        return view('store.show', [
+            'product' => $product
         ]);
     }
 }

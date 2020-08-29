@@ -7,36 +7,38 @@
     </div>
     <br>
     <div class="row">
-        <div class="col-md-3">
-            <span class="store-titu">
-                Filtros
-            </span>
-        </div>
-        <div class="col-md-9">
+        
+        <div class="col-md-9 store-content">
             <span class="store-titu">
                 Productos
             </span>
             <br>
-            <div class="row">
-                <div class="col-md-12 showcase-store">
-                    @if(count($products) > 0)
-                        @foreach ($products as $product)
-                            <div class="card card-producto" style="width: 18rem;">
-                                <img class="card-img-top" src="{{asset('storage/products/'.$product->image)}}" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"><?=$product->name;?></h5>
-                                    <p class="card-text">Precio: $<?=$product->price;?></p>
-                                    <a href="{{ url('/products/'.$product->id).'/edit' }}" class="btn btn-primary">Ver Producto</a>
-                                </div>
+            <div class="row showcase-store">
+                @if(count($products) > 0)
+                    @foreach ($products as $product)
+                        <div class="card card-producto" style="width: 12rem;">
+                            <img class="card-img-top" src="{{asset('storage/products/'.$product->image)}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><?=$product->name;?></h5>
+                                <p class="card-text">Precio: $<?=$product->price;?></p>
+                                <a class="btn-view-product" href="{{ url('/store/'.$product->id) }}" class="btn btn-primary">Ver Producto</a>
                             </div>
-                        @endforeach
-                    @else
-                        <br>
-                        <h5>No hay productos para mostrar.</h5>
-                    @endif
-                    
-                </div>
+                        </div>
+                    @endforeach
+                @else
+                    <br>
+                    <h5>No hay productos para mostrar.</h5>
+                @endif
+                
             </div>
+        </div>
+        <div class="col-md-3">
+            <span class="store-titu">
+                Filtros
+            </span>
+            <br>
+            <br>
+            <button class="btn btn-primary">Aplicar Filtros</button>
         </div>
     </div>
     <br>

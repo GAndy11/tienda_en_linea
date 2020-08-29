@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Product;
 use Illuminate\Contracts\Cache\Store;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
 {
@@ -66,7 +68,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        echo "<script>alert('Producto ingresado con Exito)</script>";
+        Log::info('El usuario con identificador: ' . Auth::id() . ' creó el producto con id: ' . $product->id);
 
         return redirect('/products');
     }
@@ -79,7 +81,10 @@ class ProductController extends Controller
      */
     public function show(int $id)
     {
-        //
+        $product = Product::find($id);
+        return view('products.show', [
+            'product' => $product
+        ]);
     }
 
     /**
@@ -90,7 +95,18 @@ class ProductController extends Controller
      */
     public function edit(int $id)
     {
-        //
+        $product = Product::findOrFail($id); //Traer el usuario de BD
+
+        $states = [
+            '1' => 'Activo',
+            '0' => 'Inactivo'
+        ];
+
+        return view('products.edit', [
+            'product' => $product,
+            'states' => $states
+        ]);
+
     }
 
     /**
@@ -102,7 +118,23 @@ class ProductController extends Controller
      */
     public function update(Request $request, int $id)
     {
-        //
+        //Validaciones
+        $validData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required'
+        ]);
+
+        $product = Product::findOrFail($id);
+        $product->name = $validData['name'];
+        $product->description = $validData['description'];
+        $product->price = $request->get('price');
+        $product->state = $request->get('state');
+        $product->save();
+
+        Log::info('El usuario con identificador: ' . Auth::id() . ' actualizó el producto con id: ' . $product->id);
+
+        return redirect('/products');
     }
 
     /**
